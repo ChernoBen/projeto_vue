@@ -1,6 +1,6 @@
 <template >
   <div id="cliente">
-    <h4>Nome: {{cliente.nome}}</h4>
+    <h4 v-show="showNome == true">Nome: {{cliente.nome}}</h4>
     <hr>
     <p>{{cliente.descricao}}</p>
     <hr>
@@ -8,7 +8,8 @@
     <hr>
     <p>Email:{{cliente.email}}</p>
     <hr>
-    <p>idade:{{cliente.idade}}</p>
+    <p v-if="showIdade == true"> idade:{{cliente.idade}}</p>
+    <p v-else>Idade escondida com sucesso</p>
   </div>
 </template>
 
@@ -26,12 +27,8 @@ export default {
     //     }
     // },
     props:{
-        
-        nome:String,
-        numero:String,
-        email:String,
-        idade:String,
-        descricao:String,
+        showNome:Boolean,
+        showIdade:Boolean,
         cliente:Object
     }
 }
