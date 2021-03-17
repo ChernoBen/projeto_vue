@@ -1,8 +1,11 @@
 <template>
   <div id="cliente">
+    
     <input type="text" :value="nome">
+    <input type="text" v-model="nome">
     <hr>
-    <input type="text" :value="descricao">  
+    <input type="text" :value="descricao"> 
+    <input type="text" v-model="descricao">  
     <h2>Cada componente so pode ter uma tag raiz!</h2>
     <h2>{{ nome }}</h2>
     <h2>{{ descricao }}</h2>
@@ -11,7 +14,7 @@
 
 <script>
 export default {
-
+    //data binding de 1 caminho (one way) " :value='valor' "
     data(){
 
         return {
