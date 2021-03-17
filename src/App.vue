@@ -1,12 +1,13 @@
 <template>
   <div id="app">
     <h1>Guia clientes</h1>
+    <Cliente/>
   </div>
   
 </template>
 
 <script>
-import Cliente from './components/Cliente.vue'
+import Cliente from './components/Cliente'
 // import Cliente from './components/Cliente.vue'
 export default {
   name: 'App',
