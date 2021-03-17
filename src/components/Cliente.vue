@@ -10,6 +10,7 @@
     <hr>
     <p v-if="showIdade == true"> idade:{{cliente.idade}}</p>
     <p v-else>Idade escondida com sucesso</p>
+    <h4>Id especial: {{idEspecial}} </h4>
     <button @click="mudarCor">Mudar cor</button>
     <button @click="emitirEventoDelete">deletar</button>
   </div>
@@ -51,6 +52,12 @@ export default {
             return "CHERNOBEN " + value.toUpperCase();
         }
     },
+    computed:{
+        idEspecial:function(){
+            return (this.cliente.email + this.cliente.nome + this.cliente.id).toUpperCase();
+        }
+
+    }
 
 }
 </script>
