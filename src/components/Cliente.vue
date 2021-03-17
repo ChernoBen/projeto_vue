@@ -1,6 +1,6 @@
 <template >
   <div :class="{'cliente':!isPremium,'cliente-premium':isPremium}">
-    <h4 v-show="showNome == true">Nome: {{cliente.nome |processarEmail}}</h4>
+    <h4 v-show="showNome == true">Nome: {{cliente.nome }}</h4>
     <hr>
     <p>{{cliente.descricao}}</p>
     <hr>
@@ -49,6 +49,7 @@ export default {
     },
     filters:{
         processarEmail:function(value){
+            //altera dados de uma variavel em um elemento
             return "CHERNOBEN " + value.toUpperCase();
         }
     },

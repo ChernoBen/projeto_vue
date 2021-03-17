@@ -8,7 +8,7 @@
     <hr>
     <h1>Guia clientes</h1>
     <hr>
-    <div v-for="(cliente,index) in clientes" :key="cliente.id">
+    <div v-for="(cliente,index) in orderClientes" :key="cliente.id">
       <h1>{{index + 1}}</h1>
       <Cliente :cliente="cliente" :showIdade="true" :showNome="true" @meDelete="deleteUsuario($event)"/>
       <hr>
@@ -33,8 +33,9 @@
 
 <script>
 
-import Cliente from './components/Cliente'
-import Produto from './components/Produto'
+import Cliente from './components/Cliente';
+import Produto from './components/Produto';
+import _ from 'lodash';
 
 export default {
   name: 'App',
@@ -55,6 +56,13 @@ export default {
 
       },
       clientes:[
+        
+        {
+          id:6,
+          nome:"aaa",
+          email:"chernoBen@comp",
+          idade:"25" 
+        },
         {
           id:1,
           nome:"Benj",
@@ -64,6 +72,12 @@ export default {
         {
           id:2,
           nome:"Bnj",
+          email:"chernoBen@comp",
+          idade:"25" 
+        },
+        {
+          id:7,
+          nome:"zzz",
           email:"chernoBen@comp",
           idade:"25" 
         }
@@ -98,6 +112,11 @@ export default {
   deletarUsuario:function($event){
     console.log("recebendo evento")
     console.log($event)
+  },
+  computed:{
+    orderClientes:function(){
+      return _.orderBy(this.clientes,['nome'],['desc'])
+    }
   }
   
 }
