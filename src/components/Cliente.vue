@@ -1,30 +1,38 @@
-<template>
+<template >
   <div id="cliente">
-    
-    <input type="text" :value="nome">
-    <input type="text" v-model="nome">
+    <h4>Nome: {{cliente.nome}}</h4>
     <hr>
-    <input type="text" :value="descricao"> 
-    <input type="text" v-model="descricao">  
-    <h2>Cada componente so pode ter uma tag raiz!</h2>
-    <h2>{{ nome }}</h2>
-    <h2>{{ descricao }}</h2>
+    <p>{{cliente.descricao}}</p>
+    <hr>
+    <p>Número:{{cliente.numero}}</p>
+    <hr>
+    <p>Email:{{cliente.email}}</p>
+    <hr>
+    <p>idade:{{cliente.idade}}</p>
   </div>
 </template>
 
 <script>
 export default {
     //data binding de 1 caminho (one way) " :value='valor' "
-    data(){
+    // data(){
 
-        return {
+    //     return {
 
-            nome:"Benjamim Francisco",
-            numero:"",
-            email:"",
-            idade:0,
-            descricao:"Full Stack"
-        }
+    //         numero:"123456",
+    //         email:"bneto@comp.ufmt.cua.br",
+    //         idade:25,
+    //         descricao:"Full Stack developer"
+    //     }
+    // },
+    props:{
+        
+        nome:String,
+        numero:String,
+        email:String,
+        idade:String,
+        descricao:String,
+        cliente:Object
     }
 }
 </script>
@@ -33,16 +41,14 @@ export default {
 
 #cliente{
 
-    color:green;
-    background-color:black;
+    color:#5e3d34;
+    background-color: #ECE5E3;
     max-width: 600;
     height: 300;
+    padding: 1%;
+    margin-top: 2%;
    
 }
-#cliente-nome{
 
-    color:aliceblue;
-    
-}
 
 </style>
