@@ -10,6 +10,7 @@
     <hr>
     <p v-if="showIdade == true"> idade:{{cliente.idade}}</p>
     <p v-else>Idade escondida com sucesso</p>
+    <button @click="mudarCor($event)">Mudar cor</button>
   </div>
 </template>
 
@@ -24,9 +25,20 @@ export default {
         }
     },
     props:{
+
         showNome:Boolean,
         showIdade:Boolean,
         cliente:Object
+
+    },
+    methods:{
+
+        mudarCor:function($event){
+            //eventos retornam dados
+
+            this.isPremium = !this.isPremium
+
+        }
     }
 }
 </script>
