@@ -79,7 +79,9 @@ export default {
   methods:{
 
     cadastrarUsuario:function(){
-
+      if(this.nomeField == "" || this.nomeField=="" || this.nomeField < 3){
+        console.log("erro validação")
+      }
       this.clientes.push({
 
         nome:this.nomeField,
