@@ -1,11 +1,26 @@
 <template>
   <div id="cliente">
     <h2>Cada componente so pode ter uma tag raiz!</h2>
+    <h2>{{ nome }}</h2>
+    <h2>{{ descricao }}</h2>
   </div>
 </template>
 
 <script>
-export default defineComponent({});
+export default {
+
+    data(){
+
+        return {
+
+            nome:"Benjamim Francisco",
+            numero:"",
+            email:"",
+            idade:0,
+            descricao:"Full Stack"
+        }
+    }
+}
 </script>
 
 <style scoped>

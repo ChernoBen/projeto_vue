@@ -2,17 +2,26 @@
   <div id="app">
     <h1>Guia clientes</h1>
     <Cliente/>
+    <hr>
+    <h4>
+      lista de produtos
+    </h4>
+    <hr>
+    <Produto/>
   </div>
   
 </template>
 
 <script>
+
 import Cliente from './components/Cliente'
-// import Cliente from './components/Cliente.vue'
+import Produto from './components/Produto'
+
 export default {
   name: 'App',
   components:{
-    Cliente
+    Cliente,
+    Produto
     
   }
   
