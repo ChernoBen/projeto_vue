@@ -1,5 +1,5 @@
 <template >
-  <div id="cliente">
+  <div :class="{'cliente':!isPremium,'cliente-premium':isPremium}">
     <h4 v-show="showNome == true">Nome: {{cliente.nome}}</h4>
     <hr>
     <p>{{cliente.descricao}}</p>
@@ -16,16 +16,13 @@
 <script>
 export default {
     //data binding de 1 caminho (one way) " :value='valor' "
-    // data(){
+    data(){
 
-    //     return {
+        return {
 
-    //         numero:"123456",
-    //         email:"bneto@comp.ufmt.cua.br",
-    //         idade:25,
-    //         descricao:"Full Stack developer"
-    //     }
-    // },
+            isPremium:false
+        }
+    },
     props:{
         showNome:Boolean,
         showIdade:Boolean,
@@ -36,7 +33,7 @@ export default {
 
 <style scoped>
 
-#cliente{
+.cliente{
 
     color:#5e3d34;
     background-color: #ECE5E3;
@@ -46,6 +43,12 @@ export default {
     margin-top: 2%;
    
 }
-
+.cliente-premium{
+    background-color: black;
+    color: yellow;
+    max-width: 600px;
+    padding: 1%;
+    margin-top: 2%;
+}
 
 </style>
