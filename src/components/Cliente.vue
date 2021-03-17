@@ -1,5 +1,8 @@
 <template>
   <div id="cliente">
+    <input type="text" :value="nome">
+    <hr>
+    <input type="text" :value="descricao">  
     <h2>Cada componente so pode ter uma tag raiz!</h2>
     <h2>{{ nome }}</h2>
     <h2>{{ descricao }}</h2>
