@@ -1,12 +1,12 @@
 <template >
   <div :class="{'cliente':!isPremium,'cliente-premium':isPremium}">
-    <h4 v-show="showNome == true">Nome: {{cliente.nome}}</h4>
+    <h4 v-show="showNome == true">Nome: {{cliente.nome |processarEmail}}</h4>
     <hr>
     <p>{{cliente.descricao}}</p>
     <hr>
     <p>Número:{{cliente.numero}}</p>
     <hr>
-    <p>Email:{{cliente.email}}</p>
+    <p>Email:{{cliente.email | processarEmail}}</p>
     <hr>
     <p v-if="showIdade == true"> idade:{{cliente.idade}}</p>
     <p v-else>Idade escondida com sucesso</p>
@@ -44,7 +44,14 @@ export default {
             console.log("Emitido do filho!")
             //this.$emit("meDelete",{curso:"Vue.js",emPromocao:true,component:this})
         }
-    }
+        
+    },
+    filters:{
+        processarEmail:function(value){
+            return "CHERNOBEN " + value.toUpperCase();
+        }
+    },
+
 }
 </script>
 
