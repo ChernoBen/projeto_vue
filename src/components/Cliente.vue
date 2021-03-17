@@ -11,6 +11,7 @@
     <p v-if="showIdade == true"> idade:{{cliente.idade}}</p>
     <p v-else>Idade escondida com sucesso</p>
     <button @click="mudarCor">Mudar cor</button>
+    <button @click="emitirEventoDelete">deletar</button>
   </div>
 </template>
 
@@ -38,6 +39,10 @@ export default {
 
             this.isPremium = !this.isPremium
 
+        },
+        emitirEventoDelete:function(){
+            console.log("Emitido do filho!")
+            //this.$emit("meDelete",{curso:"Vue.js",emPromocao:true,component:this})
         }
     }
 }

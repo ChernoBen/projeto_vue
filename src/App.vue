@@ -10,7 +10,7 @@
     <hr>
     <div v-for="(cliente,index) in clientes" :key="cliente.id">
       <h1>{{index + 1}}</h1>
-      <Cliente :cliente="cliente" :showIdade="true" :showNome="true"/>
+      <Cliente :cliente="cliente" :showIdade="true" :showNome="true" @meDelete="deleteUsuario($event)"/>
       <hr>
       <h4>edit</h4>
       <input type="text" v-model="cliente.nome">
@@ -94,6 +94,10 @@ export default {
       this.emailField = "" ;
       this.idadeField = 0 ;
     }
+  },
+  deletarUsuario:function($event){
+    console.log("recebendo evento")
+    console.log($event)
   }
   
 }
